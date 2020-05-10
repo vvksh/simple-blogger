@@ -2,6 +2,7 @@ var githubUserName = 'vksah32'
 var linkedinUserName = 'vksah'
 var twitterUserName = 'viveksyz'
 
+var excluded_repos = ['vksah32.github.io', 'ontrack_android_app', 'resume', 'foogle', 'ML-stuff', 'multichain-client']
 function fetchInfo (numProjects) {
     console.log("fetching")
     addAbout() 
@@ -34,7 +35,7 @@ function handleGithubResponse(arr) {
     var i;
     for(i = 0; i < arr.length; i++) {
         // don't add forked repos
-        if (!arr[i].fork) {
+        if (!excluded_repos.includes(arr[i].name) && !arr[i].fork) {
             var description = ''
             if (arr[i].description != null) {
                 description = arr[i].description

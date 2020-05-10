@@ -29,10 +29,11 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - Uses [shahdowdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
 - Excludes forked projects
 - Use *whitey.css* for styling. Inspired by whitey theme from [Typora](https://typora.io/) editor (best markdown editor I've used)
+- Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)
 
 ## To-do
 - Add support for non-project posts (don't wanna have to create a repo everytime you have to write a post). I am thinking of adding a special repo- "blog-posts" and fetch all files from that repo as posts. 
-
+- [Maybe] Add recent github commits/updates to the project page
 
 
 

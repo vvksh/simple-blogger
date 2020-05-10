@@ -22,7 +22,7 @@ function handleGithubResponse(arr) {
     var out = "";
     var i;
     for(i = 0; i < arr.length; i++) {
-        out +=  '<a class="link" href="/post.html?repoName='+arr[i].name + '>'+ arr[i].name +'\')">' + arr[i].name + '</a><br>';
+        out +=  '<a class="link" href="/post.html?repoName='+arr[i].name + '">'+ arr[i].name + '</a><br>';
 
 
         // out +=  '<div class="link" onclick="redirect(\''+ arr[i].name +'\')">' + arr[i].name + '</div><br>';

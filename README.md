@@ -7,7 +7,8 @@ This is a simple blog generator which creates a blog based on a user's github pr
 ## How to create your own blog?
 
 - Clone this repo
-- Change `githubUserName`, `linkedinUserName`, `twitterUserName` to yours
+- Change `githubUserName`, `linkedinUserName`, `twitterUserName` in `index.js` to yours 
+- Modify `excluded_repos` array in `index.js` based on your use case
 - Create a github repo: `<<your-username>>.github.io`
 - Commit changes and push to  `<<your-username>>.github.io`
 - Your blog is live at `<<your-username>>.github.io`
@@ -26,14 +27,15 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - On demand rendering - every page load fetches info from github using their api
 - When a post is clicked, the README content is fetched as markdown text and rendered into HTML
 - Because of on-demand fetching, there is noticeable lag on page load, which is fine for my use case.
-- Uses [shahdowdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
-- Excludes forked projects
+- Uses [shadowdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
+- Excludes forked projects by default
 - Use *whitey.css* for styling. Inspired by whitey theme from [Typora](https://typora.io/) editor (best markdown editor I've used)
 - Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)
 
 ## To-do
 - Add support for non-project posts (don't wanna have to create a repo everytime you have to write a post). I am thinking of adding a special repo- "blog-posts" and fetch all files from that repo as posts. 
 - [Maybe] Add recent github commits/updates to the project page
+- Look into latex rendering support
 
 
 

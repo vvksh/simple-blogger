@@ -47,9 +47,9 @@ function handleGithubResponse(arr) {
 }
 
 function redirect(repoName) {
-    // window.location.href = decodeURI("/post.html?repoName="+repoName)
     window.location.href = "/post.html?repoName="+repoName
 }
+
 
 function getPost() {
     console.log("getting post")
@@ -60,22 +60,38 @@ function getPost() {
     document.getElementById("home-link").innerHTML = `<a class="fa fa-home" href="${homeLink}"> Home </a>`
     document.getElementById("github-link").innerHTML = `<a class="fa fa-github" href="${githubLink}"> See code</a>`
 
-    var readMeUrl = 'https://raw.githubusercontent.com/vksah32/'+ repoName + '/master/README.md'
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
          if (this.readyState == 4 && this.status == 200) {
             renderMD(this.responseText);
          }
     };
-    xhttp.open("GET", readMeUrl, true);
-    // xhttp.setRequestHeader("Accept", "application/vnd.github.inertia-preview+json");
+    xhttp.open("GET", getReadmeUrl(repoName), true);
     xhttp.send(null);
 }
 
-function renderMD(text) {
-    var converter =  new showdown.Converter();
-    
-    document.getElementById("post-content").innerHTML = converter.makeHtml(text);
-
+function getReadmeUrl(repoName) {
+    return `https://raw.githubusercontent.com/vksah32/${repoName}/master/README.md`
 }
 
+/**
+ * Converts markdown content to html and adds to div "post-content" and then dynamically loads mathjax
+ * @param text  markdown post content as string
+ */
+function renderMD(text) {
+    var converter =  new showdown.Converter();
+    document.getElementById("post-content").innerHTML = converter.makeHtml(text);
+    loadMathJax()
+}
+
+/**
+ * Dynamically loads mathjax
+ * refer to: https://docs.mathjax.org/en/v2.7-latest/advanced/dynamic.html
+ */
+function loadMathJax() {
+    console.log("adding mathjax")
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+}

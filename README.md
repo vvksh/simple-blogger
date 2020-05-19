@@ -33,9 +33,10 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)
 
 ## To-do
-- Add support for non-project posts (don't wanna have to create a repo everytime you have to write a post). I am thinking of adding a special repo- "blog-posts" and fetch all files from that repo as posts. 
+- ~~Look into latex rendering support~~ [Issue #1](https://github.com/vksah32/simple-blogger/issues/1)
+- ~~Add support for non-project posts (don't wanna have to create a repo everytime you have to write a post). I am thinking of adding a special repo- "blog-posts" and fetch all files from that repo as posts.~~ [Issue #2](https://github.com/vksah32/simple-blogger/issues/2)
 - [Maybe] Add recent github commits/updates to the project page
-- Look into latex rendering support
+
 
 
 

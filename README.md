@@ -27,7 +27,7 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - On demand rendering - every page load fetches info from github using their api
 - When a post is clicked, the README content is fetched as markdown text and rendered into HTML
 - Because of on-demand fetching, there is noticeable lag on page load, which is fine for my use case.
-- Uses [shadowdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
+- Uses [showdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
 - Excludes forked projects by default
 - Use *whitey.css* for styling. Inspired by whitey theme from [Typora](https://typora.io/) editor (best markdown editor I've used)
 - Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)

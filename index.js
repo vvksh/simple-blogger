@@ -166,10 +166,12 @@ function getPost() {
     if (type == 'project' ) {
         var repoName = urlParams.get('repoName')
         var githubLink = `https://github.com/${githubUserName}/${repoName}`
+        document.title = repoName
         document.getElementById("github-link").innerHTML = `<a class="fa fa-github" href="${githubLink}"> See code</a>`
         callApi(getDownloadUrl(repoName, "README.md"), 0, renderMarkdown)
     } else {
         var fileName = urlParams.get('fileName')
+        document.title = fileName
         callApi(getDownloadUrl(blogPostsRepo, fileName), 0, renderMarkdown)
     }
 }

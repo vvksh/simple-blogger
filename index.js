@@ -190,7 +190,7 @@ function getDownloadUrl(repoName, filename) {
  * @param text  markdown post content as string
  */
 function renderMarkdown(text) {
-    var converter =  new showdown.Converter();
+    var converter =  new showdown.Converter({tables: true, strikethrough: true});
     document.getElementById("post-content").innerHTML = converter.makeHtml(text);
     loadMathJax()
 }

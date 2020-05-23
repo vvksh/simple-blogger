@@ -30,7 +30,7 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - Uses [showdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
 - Uses [highlight.js](https://highlightjs.org/) and [mathjax](https://www.mathjax.org/) to format the code blocks and latex blocks once the markdown is converted to html
 - Excludes forked projects by default
-- Use *whitey.css* for styling. Inspired by whitey theme from [Typora](https://typora.io/) editor (best markdown editor I've used)
+- Use *whitey.css* for homepage and [LaTeX.css](https://latex.now.sh/). I took whitey.css from [Typora](https://typora.io/) editor 
 - Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)
 
 ## To-do

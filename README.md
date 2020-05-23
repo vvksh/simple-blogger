@@ -20,7 +20,7 @@ This is a simple blog generator which creates a blog based on a user's github pr
 I trired various blog generators such as Jekyll, Hugo, Ghost, but they seemed to require some maintenance overhead. Plus, for my use case, most of my post would be related to a coding project, so
 I didn't want to write a project README  AND a corresponding "blog" post leading to duplication of work.
 
-I also felt like the blog generators had too many nuts and bolts for my taste. I have tried to keep this project as vanilla as possible using plain javascript, css and html. There's only one dependency - shadowdownjs-> used to render markdown as html.
+I also felt like the blog generators had too many nuts and bolts for my taste. I have tried to keep this project as vanilla as possible using plain javascript, css and html. The only dependencies are - `showdownjs`, `highlight.js` and `mathjax` -> used to render markdown (with code blocks and latex) as html.
 
 ## Design choices
 
@@ -28,6 +28,7 @@ I also felt like the blog generators had too many nuts and bolts for my taste. I
 - When a post is clicked, the README content is fetched as markdown text and rendered into HTML
 - Because of on-demand fetching, there is noticeable lag on page load, which is fine for my use case.
 - Uses [showdownjs](https://github.com/showdownjs/showdown) to convert markdown to HTML
+- Uses [highlight.js](https://highlightjs.org/) and [mathjax](https://www.mathjax.org/) to format the code blocks and latex blocks once the markdown is converted to html
 - Excludes forked projects by default
 - Use *whitey.css* for styling. Inspired by whitey theme from [Typora](https://typora.io/) editor (best markdown editor I've used)
 - Can skip repos if you don't want to create a post for certain projects (eg: unfinished/not-started projects)

@@ -82,20 +82,6 @@ blockquote {
 	padding-left: 1em;
 	border-left: 1px solid #ddd;
 }
-code,
-pre {
-	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
-	font-size: .9em;
-	background: white;
-}
-.md-fences{
-	margin-left: 1em;
-	padding-left: 1em;
-	border: 1px solid #ddd;
-	padding-bottom: 8px;
-	padding-top: 6px;
-	margin-bottom: 1.5em;
-}
 
 a {
 	color: #2484c1;

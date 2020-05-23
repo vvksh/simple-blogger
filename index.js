@@ -193,6 +193,9 @@ function renderMarkdown(text) {
     var converter =  new showdown.Converter({tables: true, strikethrough: true});
     document.getElementById("post-content").innerHTML = converter.makeHtml(text);
     loadMathJax()
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
 }
 
 /**

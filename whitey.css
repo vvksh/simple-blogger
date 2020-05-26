@@ -6,12 +6,38 @@ html, body {
 	margin: auto;
 	background: #fefefe;
 }
-body {
+/* body {
 	font-family: "Vollkorn", Palatino, Times;
 	color: #333;
 	line-height: 1.4;
 	text-align: justify;
+} */
+body {
+	font-family: "Vollkorn", Palatino, Times;
+	/* font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif; */
+	line-height: 1.8;
+  
+	max-width: 100ch;
+	min-height: 100vh;
+	overflow-x: hidden;
+	margin: 0 auto;
+	padding: 2rem 1.25rem;
+  
+	counter-reset: theorem;
+	counter-reset: definition;
+  
+	color: hsl(0, 5%, 10%);
+	background-color:#fefefe;
+  
+	text-rendering: optimizeSpeed;
 }
+
+/* Make images easier to work with */
+img {
+	max-width: 100%;
+	display: block;
+}
+
 #write {
 	max-width: 960px;
 	margin: 0 auto;
@@ -63,7 +89,14 @@ h1+h2, h2+h3 {
 	margin-top: 0.83em;
 }
 
-p,
+p {
+	text-align: justify;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	margin-top: 1rem;
+}
+
 .mathjax-block {
 	margin-top: 0;
 	-webkit-hypens: auto;

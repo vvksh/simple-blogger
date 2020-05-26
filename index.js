@@ -16,7 +16,7 @@ var numRecentResponses = 10;
 var numAllResponses = 100;
 
 //These repos are excluded from the site
-var excluded_repos = ['vksah32.github.io', 'ontrack_android_app', 'resume', 'foogle', 'ML-stuff', 'multichain-client', 'blog-posts', 'distributed-systems-6.824']
+var excluded_repos = ['vksah32.github.io', 'screenshots', 'ontrack_android_app', 'resume', 'foogle', 'blog-posts']
 
 /**
  * Adds a list of recent posts and project pages on home page
@@ -51,7 +51,7 @@ function fetchAllProjects() {
  * @param {function} projectResponseHandler function to apply to projects
  */
 function fetchProjects (numResponses, projectResponseHandler) {
-    const getProjectsEndpoint = `https://api.github.com/users/${githubUserName}/repos?per_page=${numResponses}&sort=updated`;
+    const getProjectsEndpoint = `https://api.github.com/users/${githubUserName}/repos?per_page=${numResponses}&sort=pushed`;
     callApi(getProjectsEndpoint, numResponses, projectResponseHandler)
 }
 
@@ -142,7 +142,7 @@ function addProjectsToPage(numResponses, projectsArrayRawResponse) {
     var i;
     for(i = 0; i < projectsArray.length; i++) {
         // don't add forked repos
-        if (!excluded_repos.includes(projectsArray[i].name) && !projectsArray[i].fork) {
+        if (!excluded_repos.includes(projectsArray[i].name) && !projectsArray[i].fork && !projectsArray[i].archived ) {
 
             var description = ''
             if (projectsArray[i].description != null) {
